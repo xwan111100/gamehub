@@ -5,6 +5,7 @@ import '/services/auth_service.dart';
 import '/widgets/game_card.dart';
 import '/screens/auth/login_screen.dart';
 import '../quiz/quiz_game_screen.dart';
+import '../visual_novel/vn_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -164,6 +165,83 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+
+          // Visual Novel Banner
+          GestureDetector(
+            onTap: () {
+              Navigator.of(
+                context,
+              ).push(MaterialPageRoute(builder: (_) => const VNScreen()));
+            },
+            child: Container(
+              margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              padding: const EdgeInsets.all(24),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.teal, Colors.teal.shade700],
+                ),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.teal.withValues(alpha: 0.3),
+                    blurRadius: 10,
+                    offset: const Offset(0, 4),
+                  ),
+                ],
+              ),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Row(
+                          children: [
+                            Icon(
+                              Icons.menu_book,
+                              color: Colors.white,
+                              size: 28,
+                            ),
+                            SizedBox(width: 8),
+                            Text(
+                              'Visual Novel',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 8),
+                        Text(
+                          'Enjoy story-driven interactive gameplay',
+                          style: TextStyle(color: Colors.white70),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(width: 16),
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Text(
+                      'PLAY',
+                      style: TextStyle(
+                        color: Colors.teal,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+
           Padding(
             padding: const EdgeInsets.all(16.0),
             child: TextField(
