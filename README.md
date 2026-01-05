@@ -88,10 +88,6 @@ Dan aktifkan:
 
 ---
 
-## 📸 Preview (Opsional)
-
-*Tambahkan screenshot aplikasi di sini untuk meningkatkan nilai portofolio.*
-
 ---
 
 ## 🎯 Tujuan Project
